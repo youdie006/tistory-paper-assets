@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="900" viewBox="0 0 1800 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f8fbff"/><stop offset="1" stop-color="#eef3f8"/></linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#d9485f" stop-opacity="0.95"/><stop offset="1" stop-color="#d9485f" stop-opacity="0.08"/></linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#40566f"/></marker>
+    <style>
+      .title{font:700 42px Arial,sans-serif;fill:#1d2b3a}.stage{font:700 28px Arial,sans-serif;fill:#26384b}.body{font:24px Arial,sans-serif;fill:#33485e}.small{font:21px Arial,sans-serif;fill:#51687f}.box{fill:#ffffff;stroke:#71869b;stroke-width:4;rx:22}.risk{fill:#fff1f3;stroke:#d9485f;stroke-width:4;rx:22}.safe{fill:#effaf4;stroke:#2d9d67;stroke-width:4;rx:22}.arrow{stroke:#40566f;stroke-width:6;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1800" height="900" fill="url(#bg)"/>
+  <text x="900" y="72" text-anchor="middle" class="title">Instruction Rationale Decay and Prompt Comments</text>
+  <text x="270" y="145" text-anchor="middle" class="stage">WRITE · t = 0</text>
+  <text x="900" y="145" text-anchor="middle" class="stage">MAINTENANCE LOOP · t = 1…k</text>
+  <text x="1530" y="145" text-anchor="middle" class="stage">EDIT · t = k</text>
+
+  <rect x="85" y="210" width="430" height="190" class="risk"/>
+  <text x="300" y="260" text-anchor="middle" class="stage">Failure observed</text>
+  <text x="300" y="308" text-anchor="middle" class="body">Append instruction d₄</text>
+  <text x="300" y="350" text-anchor="middle" class="small">Why it was needed remains unwritten</text>
+
+  <rect x="685" y="210" width="430" height="190" class="box"/>
+  <text x="900" y="260" text-anchor="middle" class="stage">Instructions accumulate</text>
+  <text x="900" y="308" text-anchor="middle" class="body">d₁ … d₃ + d₄ … d₆</text>
+  <text x="900" y="350" text-anchor="middle" class="small">New fixes are cheap; old context fades</text>
+
+  <rect x="1285" y="210" width="430" height="190" class="risk"/>
+  <text x="1500" y="260" text-anchor="middle" class="stage">Deletion becomes risky</text>
+  <text x="1500" y="308" text-anchor="middle" class="body">Keep everything or rewrite all</text>
+  <text x="1500" y="350" text-anchor="middle" class="small">Counterfactual regression cost dominates</text>
+
+  <path d="M515 305 H675" class="arrow"/><path d="M1115 305 H1275" class="arrow"/>
+  <rect x="280" y="470" width="1240" height="24" rx="12" fill="url(#fade)"/>
+  <text x="280" y="535" class="small">High rationale recoverability</text><text x="1520" y="535" text-anchor="end" class="small">Low rationale recoverability</text>
+
+  <rect x="260" y="610" width="1280" height="185" class="safe"/>
+  <text x="900" y="660" text-anchor="middle" class="stage">Prompt comment preserves provenance</text>
+  <text x="900" y="708" text-anchor="middle" class="body">Instruction: “End each sentence with a period.”</text>
+  <text x="900" y="752" text-anchor="middle" class="body">Comment: “Task 0 repeatedly failed sentence-count verification; the previous wording was ambiguous.”</text>
+  <text x="900" y="840" text-anchor="middle" class="small">Reviewer schematic based on the paper’s Figure 2 and maintenance model; not an empirical result plot.</text>
+</svg>
